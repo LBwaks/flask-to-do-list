@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+  <div class="row mx-auto">
+    <div class="col-md-6 ">
+
+  <form method="POST" action="{{url_for('todo.update',id=list['id'])}}">
+    <div class="mb-3 row">
+    <label for="title" class="form-label">Title</label>
+    <input name="title" id="title"  class="form-control" 
+      value="{{ request.form['title'] or list['title'] }}" required>
+    </div>
+    <div class="mb-3 row pt-3">
+    <input class="btn btn-sm btn-primary" type="submit" value="Save">
+      </div>
+  </form>
+  </div>
+  </div>
+</div>
+{% endblock %}
